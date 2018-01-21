@@ -9,16 +9,19 @@ package
 		// ------------------------ //
 		private static const DIV:Number = 128;
 		
+		[Inline]
 		public static function vx(dir:Number, speed:Number):Number
 		{
 			return Math.cos(Math.PI / DIV * dir) * speed;
 		}
 		
+		[Inline]
 		public static function vy(dir:Number, speed:Number):Number
 		{
 			return Math.sin(Math.PI / DIV * dir) * speed;
 		}
 		
+		[Inline]
 		public static function deltaAngle(dir1:Number, dir2:Number):Number
 		{
 			var d1:Number = normalizeAngle(dir1);
@@ -30,6 +33,7 @@ package
 			return d1-d2;
 		}
 		
+		[Inline]
 		public static function angle(x1:Number, y1:Number, x2:Number, y2:Number, divide:int = 0):Number
 		{
 			var tempx:Number = x2 - x1;
@@ -43,11 +47,13 @@ package
 			}
 		}
 		
+		[Inline]
 		public static function distance(x1:Number, y1:Number, x2:Number, y2:Number):Number
 		{
 			return Point.distance(new Point(x1, y1), new Point(x2, y2));
 		}
 		
+		[Inline]
 		public static function normalizeAngle(dir:Number):Number
 		{
 			if (dir < -DIV) {
@@ -60,11 +66,13 @@ package
 		// ------------------------ //
 		// 乱数
 		// ------------------------ //
+		[Inline]
 		public static function rand(min:Number, max:Number):Number
 		{
 			return Math.random() * (max - min) + min;
 		}
 		
+		[Inline]
 		public static function rand_int(min:int, max:int):int
 		{
 			return Math.floor(Math.random() * (max - min + 1) + min);
@@ -73,11 +81,13 @@ package
 		// ------------------------ //
 		// 制限
 		// ------------------------ //
+		[Inline]
 		public static function clamp(value:Number, min:Number, max:Number):Number
 		{
 			return Math.max(min, Math.min(value, max));
 		}
 		
+		[Inline]
 		public static function repeat(value:Number, length:Number):Number
 		{
 			if(value < 0) {
@@ -90,6 +100,7 @@ package
 		// ------------------------ //
 		// 文字列
 		// ------------------------ //
+		[Inline]
 		public static function zeroPadding(num:Number, digit:int):String
 		{
 			if(num.toString().length <= digit) {
